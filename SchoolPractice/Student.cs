@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
+
 namespace SchoolPractice
 {
     public class Student
@@ -31,6 +33,11 @@ namespace SchoolPractice
         public void AddGrade(int courseCredits, double grade)
         {
             // Update the appropriate properties: NumberOfCredits, Gpa
+            double currentQualityScore = this.Gpa * this.NumberOfCredits;
+            double classQualityScore = grade * courseCredits;
+            double totalQualityScore = currentQualityScore + classQualityScore;
+            this.NumberOfCredits += courseCredits;
+            this.Gpa = totalQualityScore / this.NumberOfCredits;
         }
 
         //TODO: Complete the GetGradeLevel method here:
