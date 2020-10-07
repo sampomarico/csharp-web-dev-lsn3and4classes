@@ -13,7 +13,13 @@ namespace SchoolPractice
             //Console.WriteLine(test.GetGradeLevel(test.NumberOfCredits));
 
             test.AddGrade(4, 3);
-            Console.WriteLine(test.Gpa);
+            //Console.WriteLine(test.Gpa);
+
+            //Console.WriteLine(test.ToString());
+
+            Student test2 = new Student("Haley", 15029, 45, 3.75);
+
+            Console.WriteLine(test.Equals(test2));
         }
     }
 }
